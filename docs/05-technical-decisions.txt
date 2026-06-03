@@ -1,0 +1,13 @@
+## Parallel processing
+
+The system uses Celery workers to process CSV orders asynchronously.
+
+For local Windows development, the worker can be started with:
+
+python -m celery -A config worker -l info -P threads --concurrency=4
+
+For Docker/Linux environments, the worker runs with:
+
+celery -A config worker -l info --concurrency=4
+
+This allows multiple orders to be processed in parallel without blocking the Django main thread.
