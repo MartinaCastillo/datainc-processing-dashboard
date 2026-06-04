@@ -70,13 +70,25 @@ onUnmounted(stopPolling);
   <section class="orders-section">
     <div class="section-header">
       <div>
-        <h2>Orders Dashboard</h2>
+        <h2>Órdenes de Procesamiento</h2>
         <p>Historial cronológico de órdenes y timeline de procesamiento.</p>
       </div>
 
-      <button @click="refreshOrders" :disabled="isLoading">
-        {{ isLoading ? "Actualizando..." : "Actualizar" }}
-      </button>
+      <div class="dashboard-status">
+        <span v-if="isLoading">
+            Sincronizando...
+        </span>
+
+        <div class="dashboard-status">
+        <span v-if="hasActiveOrders()">
+            🟡 Monitoreando órdenes activas
+        </span>
+
+        <span v-else>
+            🟢 Sistema sincronizado
+        </span>
+        </div>
+        </div>
     </div>
 
     <div class="orders-list">

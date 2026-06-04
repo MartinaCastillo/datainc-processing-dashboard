@@ -1,0 +1,103 @@
+# Uso de Herramientas de IA
+
+## Enfoque Adoptado
+
+Durante el desarrollo se utilizó un enfoque orientado a Specification Driven Development, apoyándose en herramientas de IA para acelerar la implementación y la documentación.
+
+Las herramientas de IA fueron utilizadas como asistentes de desarrollo y no como reemplazo del análisis y las decisiones de diseño.
+
+---
+
+## Áreas de Utilización
+
+### Generación de Especificaciones
+
+Se utilizaron herramientas de IA para transformar los requerimientos del challenge en documentación estructurada, incluyendo:
+
+- Requerimientos funcionales.
+- Arquitectura.
+- Flujo de procesamiento.
+- Decisiones técnicas.
+- Mejoras futuras.
+
+---
+
+### Implementación
+
+Las herramientas de IA fueron empleadas para:
+
+- Generar código base.
+- Resolver problemas de integración.
+- Refactorizar componentes.
+- Mejorar la organización del proyecto.
+
+Todo el código generado fue revisado, adaptado y validado manualmente.
+
+---
+
+### Diseño de Arquitectura
+
+La IA fue utilizada para explorar distintas alternativas de diseño, evaluando:
+
+- Procesamiento síncrono vs asíncrono.
+- Polling vs WebSockets.
+- Redis vs RabbitMQ.
+- Almacenamiento local vs almacenamiento distribuido.
+
+Las decisiones finales fueron tomadas considerando los requerimientos y el alcance del challenge.
+
+---
+
+### Documentación
+
+La documentación del proyecto fue elaborada con apoyo de herramientas de IA, con el objetivo de:
+
+- Mantener consistencia.
+- Mejorar la claridad.
+- Registrar las decisiones adoptadas.
+- Facilitar la comprensión del sistema.
+
+---
+
+## Validación Humana
+
+Todas las implementaciones y decisiones arquitectónicas fueron revisadas manualmente.
+
+Se realizaron pruebas funcionales para verificar:
+
+- Subida de archivos.
+- Procesamiento asíncrono.
+- Procesamiento paralelo.
+- Actualización del dashboard.
+- Descarga de archivos procesados.
+- Ejecución mediante Docker Compose.
+
+---
+
+## Principios Aplicados
+
+Durante el desarrollo se priorizaron los siguientes principios:
+
+- Simplicidad.
+- Separación de responsabilidades.
+- Escalabilidad.
+- Trazabilidad.
+- Observabilidad.
+- Reproducibilidad del entorno.
+- Mantenibilidad.
+
+---
+
+## Artefactos Generados
+
+Como resultado del proceso se generaron los siguientes documentos:
+
+- 01-requirements.md
+- 02-architecture.md
+- 03-processing-flow.md
+- 04-api-spec.md
+- 05-technical-decisions.md
+- 06-ai-usage.md
+- 07-future-improvements.md
+
+con el objetivo de mantener una aproximación orientada a especificaciones y facilitar la evolución futura del sistema.

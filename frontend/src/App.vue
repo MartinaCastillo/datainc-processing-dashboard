@@ -11,11 +11,20 @@ const handleUploaded = () => {
 </script>
 
 <template>
-  <div class="container">
-    <h1>DataINC Processing Dashboard</h1>
+  <main class="app-shell">
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">DataINC</p>
+        <h1>CSV Processing Dashboard</h1>
+        <p class="subtitle">
+          Seguimiento de órdenes, procesamiento asíncrono y descarga de archivos normalizados.
+        </p>
+      </div>
+    </header>
 
-    <UploadSection @uploaded="handleUploaded" />
-
-    <OrdersTable ref="ordersTable" />
-  </div>
+    <div class="page-grid">
+      <UploadSection @uploaded="handleUploaded" />
+      <OrdersTable ref="ordersTable" />
+    </div>
+  </main>
 </template>

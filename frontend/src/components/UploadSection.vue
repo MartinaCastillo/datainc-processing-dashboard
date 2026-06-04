@@ -22,16 +22,15 @@ const onFileChange = (event: Event) => {
 
 const processFile = async () => {
   if (!file.value) {
-    message.value = "Seleccione un archivo CSV";
+    message.value = "Seleccioná un archivo CSV antes de continuar.";
     return;
   }
 
   try {
     isUploading.value = true;
-
     await uploadFile(file.value);
 
-    message.value = "Archivo enviado correctamente";
+    message.value = "Orden creada correctamente.";
     file.value = null;
 
     if (fileInput.value) {
@@ -40,7 +39,7 @@ const processFile = async () => {
 
     emit("uploaded");
   } catch {
-    message.value = "Error al subir archivo";
+    message.value = "No se pudo subir el archivo. Revisá el formato o intentá nuevamente.";
   } finally {
     isUploading.value = false;
   }
@@ -48,13 +47,15 @@ const processFile = async () => {
 </script>
 
 <template>
-  <section class="upload-card">
-    <div>
-      <h2>Upload CSV</h2>
-      <p>Subí un archivo para crear una nueva orden de procesamiento.</p>
+  <section class="panel upload-panel">
+    <div class="panel-header">
+      <div>
+        <h2>Nueva orden</h2>
+        <p>Subí un archivo CSV para iniciar el procesamiento.</p>
+      </div>
     </div>
 
-    <div class="upload-actions">
+    <div class="upload-box">
       <input
         ref="fileInput"
         type="file"
@@ -62,15 +63,20 @@ const processFile = async () => {
         @change="onFileChange"
       />
 
-      <button
-        @click="processFile"
-        :disabled="isUploading"
-      >
-        {{ isUploading ? "Procesando..." : "Procesar Archivo" }}
-      </button>
+      <div v-if="file" class="selected-file">
+        Archivo seleccionado: <strong>{{ file.name }}</strong>
+      </div>
     </div>
 
-    <p v-if="message" class="upload-message">
+    <button
+      class="primary-button"
+      @click="processFile"
+      :disabled="isUploading"
+    >
+      {{ isUploading ? "Creando orden..." : "Procesar archivo" }}
+    </button>
+
+    <p v-if="message" class="helper-message">
       {{ message }}
     </p>
   </section>
